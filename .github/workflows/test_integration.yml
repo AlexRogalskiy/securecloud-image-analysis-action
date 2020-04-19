@@ -2,9 +2,9 @@ name: Integration Test
 on: [push]
 jobs:
   build:
-    runs-on:  ubuntu-latest
+    runs-on: ubuntu-latest
     container:
-      image: ellerbrock/alpine-bash-curl-ssl
+      image: elixir:1.9-slim
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
