@@ -3,8 +3,6 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: bizongroup/alpine-curl-bash
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
