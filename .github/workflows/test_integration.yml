@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: elixir:1.9-slim
+      image: bizongroup/alpine-curl-bash
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
