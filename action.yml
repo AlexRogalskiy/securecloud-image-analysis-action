@@ -13,7 +13,7 @@ outputs:
     description: 'Vulnerabilities scan report'
 runs:
   using: 'docker'
-  image: 'docker://bizongroup/alpine-curl-bash'
+  image: 'Dockerfile'
   args:
     - ${{ inputs.securecloud-account }}
     - ${{ inputs.securecloud-project }}

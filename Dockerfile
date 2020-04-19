@@ -1,4 +1,5 @@
-FROM docker:19.03.2
+#FROM docker:19.03.2
+FROM bizongroup/alpine-curl-bash
 
 RUN apk update \
   && apk upgrade \
