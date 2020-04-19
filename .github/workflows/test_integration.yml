@@ -2,7 +2,7 @@ name: Integration Test
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ellerbrock/alpine-bash-curl-ssl
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
