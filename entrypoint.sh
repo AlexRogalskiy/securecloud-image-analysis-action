@@ -26,7 +26,8 @@ scanImage() {
   url="$TUFIN_URL/api/scripts/image-scan"
   
   echo $url
-  bash <(curl -s $url) "$IMAGE_NAME:$IMAGE_TAG"  
+  curl -s $url
+  #bash <(curl -s $url) "$IMAGE_NAME:$IMAGE_TAG"  
 }
 
 main
