@@ -22,8 +22,8 @@ scanImage() {
   export IMAGE_NAME=$3
   export IMAGE_TAG=$4
   export TUFIN_URL="https://securecloud.tufin.io"
-  export TUFIN_API_KEY=secrets.GENERIC_BANK_RETAIL_ALL_TOKEN
-  export TUFIN_DOCKER_REPO_PASSWORD=secrets.GENERIC_BANK_RETAIL_AGENT_TOKEN
+  export TUFIN_API_KEY=${{ secrets.GENERIC_BANK_RETAIL_ALL_TOKEN  }}
+  export TUFIN_DOCKER_REPO_PASSWORD=${{ secrets.GENERIC_BANK_RETAIL_AGENT_TOKEN }}
   url="$TUFIN_URL/api/scripts/image-scan"
   
   curl -s $url > scan.sh
@@ -32,7 +32,6 @@ scanImage() {
       echo "Failed to retrieve scan script from $url with exit code $result"
       exit 1
   fi
-  echo secrets.GENERIC_BANK_RETAIL_AGENT_TOKEN 
   bash -x scan.sh "$IMAGE_NAME:$IMAGE_TAG"  
 }
 
