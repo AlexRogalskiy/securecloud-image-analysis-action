@@ -4,7 +4,9 @@ set -e
 main() {
   sanitize "${INPUT_SECURECLOUD_ACCOUNT}" securecloud_account
   sanitize "${INPUT_SECURECLOUD_PROJECT}" securecloud_project
-  scanImage $INPUT_SECURECLOUD_ACCOUNT $INPUT_SECURECLOUD_PROJECT "tufinim/generic-bank" "latest"
+  sanitize "${INPUT_IMAGE_NAME}" image_name
+  sanitize "${INPUT_IMAGE_TAG}" image_tag
+  scanImage $INPUT_SECURECLOUD_ACCOUNT $INPUT_SECURECLOUD_PROJECT INPUT_IMAGE_NAME INPUT_IMAGE_TAG
 }
 
 sanitize() {

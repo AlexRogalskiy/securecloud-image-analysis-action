@@ -10,3 +10,5 @@ jobs:
         uses: Tufin/securecloud-image-analysis-action@init
         with:
           securecloud_account: generic-bank
+          image_name: tufinim/generic-bank
+          image_tag: latest
