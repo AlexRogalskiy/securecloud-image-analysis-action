@@ -1,8 +1,6 @@
-FROM alpine
+FROM docker
 
-RUN apk update \
-  && apk upgrade \
-  && apk add --no-cache git curl bash
+RUN apk add -v --update bash curl git
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
