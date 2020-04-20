@@ -32,7 +32,7 @@ scanImage() {
       echo "Failed to retrieve scan script from $url with exit code $result"
       exit 1
   fi
-  bash scan.sh "$IMAGE_NAME:$IMAGE_TAG"  
+  bash -x scan.sh "$IMAGE_NAME:$IMAGE_TAG"  
 }
 
 main
