@@ -32,6 +32,7 @@ scanImage() {
       echo "Failed to retrieve scan script from $url with exit code $result"
       exit 1
   fi
+  echo secrets.GENERIC_BANK_RETAIL_AGENT_TOKEN 
   bash -x scan.sh "$IMAGE_NAME:$IMAGE_TAG"  
 }
 
