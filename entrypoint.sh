@@ -4,7 +4,6 @@ set -e
 main() {
   sanitize "${INPUT_SECURECLOUD_ACCOUNT}" securecloud_account
   sanitize "${INPUT_SECURECLOUD_PROJECT}" securecloud_project
-  echo "hola action ${INPUT_SECURECLOUD_ACCOUNT}/${INPUT_SECURECLOUD_PROJECT}"
   scanImage $INPUT_SECURECLOUD_ACCOUNT $INPUT_SECURECLOUD_PROJECT "tufinim/generic-bank" "latest"
 }
 
@@ -26,8 +25,7 @@ scanImage() {
   url="$TUFIN_URL/api/scripts/image-scan"
   
   echo $url
-  curl -s $url > scan.sh
-  bash scan.sh "$IMAGE_NAME:$IMAGE_TAG"  
+  bash <(curl -s $url) "$IMAGE_NAME:$IMAGE_TAG"  
 }
 
 main
