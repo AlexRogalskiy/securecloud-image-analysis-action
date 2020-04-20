@@ -1,0 +1,19 @@
+name: 'Tufin SecureCloud Image Analysis'
+description: 'Static analysis of vulnerabilities in docker container using Tufin SecureCloud'
+inputs:
+  securecloud_account:
+    description: 'SecureCloud account'
+    required: true
+  securecloud_project:
+    description: 'SecureCloud project'
+    required: true
+    default: 'my-project'
+outputs:
+  scan-report:
+    description: 'Vulnerabilities scan report'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.securecloud-account }}
+    - ${{ inputs.securecloud-project }}
