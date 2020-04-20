@@ -26,8 +26,13 @@ scanImage() {
   export TUFIN_DOCKER_REPO_PASSWORD=secrets.GENERIC_BANK_RETAIL_AGENT_TOKEN
   url="$TUFIN_URL/api/scripts/image-scan"
   
-  echo $url
-  bash <(curl -s $url) "$IMAGE_NAME:$IMAGE_TAG"  
+  curl -s $url > scan.sh
+  result="$?"
+  if [ "$result" -ne 0 ]; then
+      echo "Failed to retrieve scan script from $url with exit code $result"
+      exit 1
+  fi
+  bash scan.sh "$IMAGE_NAME:$IMAGE_TAG"  
 }
 
 main
