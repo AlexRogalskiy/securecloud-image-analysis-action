@@ -7,7 +7,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Tufin SecureCloud vulenrabilities analysis
-        uses: Tufin/securecloud-image-analysis-action@init
+        uses: Tufin/securecloud-image-analysis-action@scan-details
         with:
           securecloud_account: generic-bank
           image_name: tufinim/generic-bank
