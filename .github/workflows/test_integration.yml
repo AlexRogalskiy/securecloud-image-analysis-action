@@ -4,16 +4,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Tufin SecureCloud vulenrabilities analysis
+      - name: Build the Docker image
+        run: docker build -t image_to_scan:1 . 
+      - name: Tufin SecureCloud Vulenrability Analysis
         uses: Tufin/securecloud-image-analysis-action@scan-details
-        with:
-          securecloud_account: generic-bank
-          securecloud_project: retail
-          image_name: tufinim/generic-bank
-          image_tag: latest
         env:
           TUFIN_API_KEY: ${{ secrets.GENERIC_BANK_RETAIL_ALL_TOKEN }}
           TUFIN_DOCKER_REPO_PASSWORD: ${{ secrets.GENERIC_BANK_RETAIL_AGENT_TOKEN }}
-          TEST: "aa"
+          TUFIN_DOMAIN: generic-bank
+          TUFIN_PROJECT: retail
+          IMAGE_NAME: image_to_scan
+          IMAGE_TAG: 1
