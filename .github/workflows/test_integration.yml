@@ -10,10 +10,12 @@ jobs:
         run: docker build -t image_to_scan:1 . 
       - name: Tufin SecureCloud Vulenrability Analysis
         uses: Tufin/securecloud-image-analysis-action@scan-details
+        with:
+          securecloud_account: generic-bank
+          securecloud_project: retail
+          image: image_to_scan
+          tag: 1
         env:
           TUFIN_API_KEY: ${{ secrets.GENERIC_BANK_RETAIL_ALL_TOKEN }}
           TUFIN_DOCKER_REPO_PASSWORD: ${{ secrets.GENERIC_BANK_RETAIL_AGENT_TOKEN }}
-          TUFIN_DOMAIN: generic-bank
-          TUFIN_PROJECT: retail
-          IMAGE_NAME: image_to_scan
-          IMAGE_TAG: 1
+
