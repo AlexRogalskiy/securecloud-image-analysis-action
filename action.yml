@@ -25,4 +25,3 @@ runs:
     - ${{ inputs.securecloud-project }}
     - ${{ inputs.image_name }}
     - ${{ inputs.image_tag }}
-    

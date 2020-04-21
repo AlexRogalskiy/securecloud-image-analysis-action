@@ -22,10 +22,9 @@ scanImage() {
   export IMAGE_NAME=$3
   export IMAGE_TAG=$4
   export TUFIN_URL="https://securecloud.tufin.io"
-  export TUFIN_API_KEY=${{ secrets.GENERIC_BANK_RETAIL_ALL_TOKEN  }}
-  export TUFIN_DOCKER_REPO_PASSWORD=${{ secrets.GENERIC_BANK_RETAIL_AGENT_TOKEN }}
   url="$TUFIN_URL/api/scripts/image-scan"
-  
+  echo "test=$TEST"
+
   curl -s $url > scan.sh
   result="$?"
   if [ "$result" -ne 0 ]; then
