@@ -1,4 +1,4 @@
-# Docker Image Scan with Tufin SecureChange GitHub Action
+# Docker Vulnerability Scan with Tufin SecureChange GitHub Action
 
 This GitHub Action scans a docker image for vulnerabilities using Tufin SecureCloud.
 
@@ -27,6 +27,7 @@ Build a docker image (or pull it from some registry) and then use this action to
 ## Run the workflow
 
 ```
+name: Test
 on: [push]
 jobs:
   build:
