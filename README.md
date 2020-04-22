@@ -4,7 +4,7 @@ This GitHub Action scans a docker image for vulnerabilities using Tufin SecureCl
 
 ## Usage
 
-Build a docker image (or pull it from some registry) and then use this action to scan it for vulnerabilities.
+Build a docker image (or pull it from a registry) and then use this action to scan it for vulnerabilities.
 
 ## Setup
 
@@ -25,7 +25,7 @@ Build a docker image (or pull it from some registry) and then use this action to
 4.  Call the Tufin action with the following parametes:
 
 | Parameter           | Desription           | Mandatory?  |
-| ------------------- |:--------------------:| -----------:|
+| ------------------- | -------------------- | ----------- |
 | securecloud_account | SecureCloud account  | yes         |
 | securecloud_project | SecureCloud project  | yes         |
 | image               | Docker image name    | yes         |
@@ -58,3 +58,9 @@ jobs:
           TUFIN_API_KEY: ${{ secrets.TUFIN_API_KEY }}
           TUFIN_DOCKER_REPO_PASSWORD: ${{ secrets.TUFIN_DOCKER_REPO_PASSWORD }}
 ```
+
+## How it works?
+
+The action starts by pushing the image to registry.tufin.io, this approach allows SecureCloud to scan images in private repositories.
+Once the image is pushed, SecureCloud scans it and returns a high-level summary of the findings.
+
