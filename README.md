@@ -59,7 +59,7 @@ jobs:
           TUFIN_DOCKER_REPO_PASSWORD: ${{ secrets.TUFIN_DOCKER_REPO_PASSWORD }}
 ```
 
-## How it works?
+## How it works
 
 The action starts by pushing the image to registry.tufin.io, this approach allows SecureCloud to scan images in private repositories.
 Once the image is pushed, SecureCloud scans it and returns a high-level summary of the findings.
