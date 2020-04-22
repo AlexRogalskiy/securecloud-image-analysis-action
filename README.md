@@ -1,4 +1,4 @@
-# Docker Vulnerability Scan with Tufin SecureChange GitHub Action
+# Docker Vulnerability Scan with Tufin SecureCloud
 
 This GitHub Action scans a docker image for vulnerabilities using Tufin SecureCloud.
 
