@@ -8,6 +8,12 @@ inputs:
     description: 'SecureCloud project'
     required: true
     default: 'my-project'
+  image:
+    description: 'Image name'
+    required: true
+  tag:
+    description: 'Image tag'
+    default: 'latest'
 outputs:
   scan-report:
     description: 'Vulnerabilities scan report'
@@ -17,3 +23,5 @@ runs:
   args:
     - ${{ inputs.securecloud-account }}
     - ${{ inputs.securecloud-project }}
+    - ${{ inputs.image }}
+    - ${{ inputs.tag }}
