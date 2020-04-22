@@ -1,4 +1,4 @@
-name: Integration Test
+name: Test
 on: [push]
 jobs:
   build:
@@ -9,7 +9,7 @@ jobs:
       - name: Build the Docker Image
         run: docker build -t image_to_scan . 
       - name: Tufin SecureCloud Vulenrability Analysis
-        uses: Tufin/securecloud-image-analysis-action@scan-details
+        uses: Tufin/securecloud-image-analysis-action@master
         with:
           securecloud_account: generic-bank
           securecloud_project: retail

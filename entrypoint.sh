@@ -12,7 +12,7 @@ main() {
 
 sanitize() {
   if [ -z "${1}" ]; then
-    >&2 echo "Unable to find ${2}. Did you set with.${2}?"
+    >&2 echo "Unable to find ${2}. Please set ${2}."
     exit 1
   fi
 }
