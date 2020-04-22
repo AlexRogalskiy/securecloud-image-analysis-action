@@ -8,7 +8,7 @@ Build a docker image (or pull it from some registry) and then use this action to
 
 ## Setup
 
-1.  Signup to SecureCloud 
+1.  [Signup to SecureCloud](https://www.tufin.com/request-evaluation)
 
 2.  In the SecureCloud console, go to the Kubernetes/Settings/General view and copy two tokens:
 
@@ -24,7 +24,17 @@ Build a docker image (or pull it from some registry) and then use this action to
 
 4.  Call the Tufin action with the following parametes:
 
+| Parameter           | Desription           | Mandatory?  |
+| ------------------- |:--------------------:| -----------:|
+| securecloud_account | SecureCloud account  | yes         |
+| securecloud_project | SecureCloud project  | yes         |
+| image               | Docker image name    | yes         |
+| tag                 | Image image tag      | no          |
+
+
 ## Run the workflow
+
+For example:
 
 ```
 name: Test
@@ -36,14 +46,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
       - name: Build the Docker Image
-        run: docker build -t image_to_scan:latest . 
+        run: docker build -t image_to_scan:2 . 
       - name: Tufin SecureCloud Vulenrability Analysis
         uses: Tufin/securecloud-image-analysis-action
         with:
-          securecloud_account: <your SecureCloud account name>
-          securecloud_project: <your SecureCloud project name>
-          image: <the image you want to scan, e.g. 'image_to_scan' - must be present locally>
-          tag: <the image tag , e.g. 'latest'>
+          securecloud_account: generic-bank
+          securecloud_project: my-project
+          image: image_to_scan
+          tag: 2
         env:
           TUFIN_API_KEY: ${{ secrets.TUFIN_API_KEY }}
           TUFIN_DOCKER_REPO_PASSWORD: ${{ secrets.TUFIN_DOCKER_REPO_PASSWORD }}
