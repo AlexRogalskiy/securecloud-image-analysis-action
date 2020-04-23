@@ -8,7 +8,7 @@ jobs:
         uses: actions/checkout@master
       - name: Pull the Docker Image
         run: docker pull ubuntu:trusty-20161101
-      - name: Tufin SecureCloud Vulenrability Analysis
+      - name: Vulenrability Analysis
         uses: Tufin/securecloud-image-analysis-action@master
         with:
           securecloud_account: generic-bank

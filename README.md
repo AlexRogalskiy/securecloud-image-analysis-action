@@ -2,10 +2,6 @@
 
 This GitHub Action scans a docker image for vulnerabilities using Tufin SecureCloud.
 
-## Usage
-
-Build a docker image (or pull it from a registry) and then use this action to scan it for vulnerabilities.
-
 ## Setup
 
 1.  [Signup to SecureCloud](https://www.tufin.com/request-evaluation)
@@ -47,13 +43,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
       - name: Build the Docker Image
-        run: docker build -t image_to_scan:2 . 
+        run: docker build -t my-image:2 . 
       - name: Tufin SecureCloud Vulenrability Analysis
         uses: Tufin/securecloud-image-analysis-action
         with:
           securecloud_account: generic-bank
           securecloud_project: my-project
-          image: image_to_scan
+          image: my-image
           tag: 2
         env:
           TUFIN_DOCKER_REPO_PASSWORD: ${{ secrets.TUFIN_DOCKER_REPO_PASSWORD }}
