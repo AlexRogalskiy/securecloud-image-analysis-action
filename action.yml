@@ -7,13 +7,15 @@ inputs:
   securecloud_project:
     description: 'SecureCloud project'
     required: true
-    default: 'my-project'
   image:
     description: 'Image name'
     required: true
   tag:
     description: 'Image tag'
     default: 'latest'
+  cve_details:
+    description: 'Display CVE details'
+    default: 'false'
 outputs:
   scan-report:
     description: 'Vulnerabilities scan report'
@@ -25,3 +27,4 @@ runs:
     - ${{ inputs.securecloud-project }}
     - ${{ inputs.image }}
     - ${{ inputs.tag }}
+    - ${{ inputs.cve_details }}

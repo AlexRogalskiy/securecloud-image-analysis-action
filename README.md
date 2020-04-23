@@ -24,12 +24,13 @@ Build a docker image (or pull it from a registry) and then use this action to sc
 
 4.  Call the Tufin action with the following parametes:
 
-| Parameter           | Desription           | Mandatory?  |
-|:------------------- |:-------------------- |:----------- |
-| securecloud_account | SecureCloud account  | yes         |
-| securecloud_project | SecureCloud project  | yes         |
-| image               | Image name           | yes         |
-| tag                 | Image tag            | no          |
+| Parameter           | Desription           | Mandatory?                                   |
+|:------------------- |:-------------------- |:---------------------------------------------|
+| securecloud_account | SecureCloud account  | yes                                          |
+| securecloud_project | SecureCloud project  | yes                                          |
+| image               | Image name           | yes                                          |
+| tag                 | Image tag            | no (default 'latest')                        |
+| cve_details         | Display CVE details  | no (default: show only summary, no details)  |
 
 
 ## Run the workflow
