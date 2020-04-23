@@ -6,8 +6,9 @@ main() {
   sanitize "${INPUT_SECURECLOUD_PROJECT}" securecloud_project
   sanitize "${INPUT_IMAGE}" image
   sanitize "${INPUT_TAG}" tag
+  sanitize "${INPUT_CVE_DETAILS}" cve_details
 
-  scanImage "${INPUT_SECURECLOUD_ACCOUNT}" "${INPUT_SECURECLOUD_PROJECT}" "${INPUT_IMAGE}" "${INPUT_TAG}" ${CVE_DETAILS}
+  scanImage "${INPUT_SECURECLOUD_ACCOUNT}" "${INPUT_SECURECLOUD_PROJECT}" "${INPUT_IMAGE}" "${INPUT_TAG}" ${INPUT_CVE_DETAILS}
 }
 
 sanitize() {
@@ -40,8 +41,8 @@ scanImage() {
       exit 1
   fi
 
-  echo CVE="${CVE_DETAILS}"
-  if [ "${CVE_DETAILS}" = "true" ]; then
+  echo CVE="${INPUT_CVE_DETAILS}"
+  if [ "${INPUT_CVE_DETAILS}" = "true" ]; then
       curl -H "Authorization: Bearer ${TUFIN_API_KEY}" -s "${TUFIN_URL}/cia/${TUFIN_DOMAIN}/${TUFIN_PROJECT}/scans/latest?image=${IMAGE_NAME}:${IMAGE_TAG}"
   fi
 }
