@@ -1,5 +1,5 @@
 name: 'Tufin SecureCloud Image Analysis'
-description: 'Static analysis of vulnerabilities in docker container using Tufin SecureCloud'
+description: 'Static analysis of vulnerabilities in docker containers using Tufin SecureCloud'
 inputs:
   securecloud_account:
     description: 'SecureCloud account'
