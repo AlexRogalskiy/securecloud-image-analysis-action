@@ -6,7 +6,6 @@ main() {
   sanitize "${INPUT_SECURECLOUD_PROJECT}" securecloud_project
   sanitize "${INPUT_IMAGE}" image
   sanitize "${INPUT_TAG}" tag
-  sanitize "${CVE_DETAILS}" cve_details
 
   scanImage "${INPUT_SECURECLOUD_ACCOUNT}" "${INPUT_SECURECLOUD_PROJECT}" "${INPUT_IMAGE}" "${INPUT_TAG}" ${CVE_DETAILS}
 }
