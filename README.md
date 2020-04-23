@@ -12,15 +12,15 @@ Build a docker image (or pull it from a registry) and then use this action to sc
 
 2.  In the SecureCloud console, go to the Kubernetes/Settings/General view and copy two tokens:
 
-    - The token with Scope=`agent` and Label=`kite`
+    - The token with `Scope=agent` and `Label=kite`
 
-    - The token with Scope=`all` and Label=`CI`
+    - The token with `Scope=all` and `Label=CI`
 
 3.  Add the following secrets to your repository's secrets (under Settings):
 
     - `TUFIN_DOCKER_REPO_PASSWORD`: The token with Scope=`agent` and Label=`kite`
 
-    - `TUFIN_API_KEY`: The token with Scope=`all` and Label=`CI`
+    - `TUFIN_API_KEY`: The token with `Scope=all` and `Label=CI`
 
 4.  Call the Tufin action with the following parametes:
 
@@ -55,8 +55,8 @@ jobs:
           image: image_to_scan
           tag: 2
         env:
-          TUFIN_API_KEY: ${{ secrets.TUFIN_API_KEY }}
           TUFIN_DOCKER_REPO_PASSWORD: ${{ secrets.TUFIN_DOCKER_REPO_PASSWORD }}
+          TUFIN_API_KEY: ${{ secrets.TUFIN_API_KEY }}
 ```
 
 ## How it works
@@ -72,7 +72,7 @@ The score is one of:
 
 | Score | Rank  | Vulnerabilities                    |
 |:------|:------|:-----------------------------------|
-| A+    | 100   | No vulnerabilities                 |
+| A+    | 100   | None                               |
 | A     | 90-99 | A few with low severities          |
 | B     | 80-89 | ...                                |
 | C     | 70-79 | ...                                |
