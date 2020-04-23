@@ -28,8 +28,8 @@ Build a docker image (or pull it from a registry) and then use this action to sc
 | ------------------- | -------------------- | ----------- |
 | securecloud_account | SecureCloud account  | yes         |
 | securecloud_project | SecureCloud project  | yes         |
-| image               | Docker image name    | yes         |
-| tag                 | Image image tag      | no          |
+| image               | Image name           | yes         |
+| tag                 | Image tag            | no          |
 
 
 ## Run the workflow
@@ -61,7 +61,6 @@ jobs:
 
 ## How it works
 
-The action starts by pushing the image to https://registry.tufin.io, this approach allows SecureCloud to scan images in private repositories.
-
+The action starts by pushing the image to https://registry.tufin.io. This allows SecureCloud to scan images in private repositories.  
 Once the image is pushed, SecureCloud scans it and returns a high-level summary of the findings.
 
