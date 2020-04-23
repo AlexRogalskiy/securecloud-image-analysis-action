@@ -1,4 +1,4 @@
-name: Test
+name: Test Docker Pull and Scan
 on: [push]
 jobs:
   build:
