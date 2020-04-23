@@ -1,5 +1,9 @@
 name: 'Tufin SecureCloud Image Analysis'
 description: 'Static analysis of vulnerabilities in docker containers using Tufin SecureCloud'
+author: Tufin
+branding:
+  icon: check-square 
+  color: orange
 inputs:
   securecloud_account:
     description: 'SecureCloud account'
