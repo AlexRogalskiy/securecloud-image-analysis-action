@@ -12,10 +12,12 @@ inputs:
     required: true
   tag:
     description: 'Image tag'
+    required: false
     default: 'latest'
   cve_details:
-    description: 'Display CVE details'
-    default: 'false'
+    description: 'Whether to inlcude CVE details in output or only the summary'
+    required: false
+    default: false
 outputs:
   scan-report:
     description: 'Vulnerabilities scan report'

@@ -40,6 +40,7 @@ scanImage() {
       exit 1
   fi
 
+  echo CVE="${CVE_DETAILS}"
   if [ "${CVE_DETAILS}" = "true" ]; then
       curl -H "Authorization: Bearer ${TUFIN_API_KEY}" -s "${TUFIN_URL}/cia/${TUFIN_DOMAIN}/${TUFIN_PROJECT}/scans/latest?image=${IMAGE_NAME}:${IMAGE_TAG}"
   fi
