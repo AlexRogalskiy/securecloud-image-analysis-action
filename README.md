@@ -62,5 +62,64 @@ jobs:
 ## How it works
 
 The action starts by pushing the image to https://registry.tufin.io. This allows SecureCloud to scan images in private repositories.  
-Once the image is pushed, SecureCloud scans it and returns a high-level summary of the findings.
+Once the image is pushed, SecureCloud scans it and returns a high-level summary of the findings
 
+## Output
+
+The scan action returns a high-level summary of the findings including the number of vulnerabilities for each severity (critical, high etc.), a rank and a score.
+The rank range is between 1 (many vulnerabilities) to 100 (no vulnerabilities).
+The score is one of:
+
+| Score | Rank  | Vulnerabilities                    |
+| ------|-------|------------------------------------|
+| A+    | 100   | No vulnerabilities                 |
+| A     | 90-99 | A few with low severities          |
+| B     | 80-89 | ...                                |
+| C     | 70-79 | ...                                |
+| D     | 60-60 | ...                                |
+| F     | <60   | Many or a few with high-severities |
+
+For example, this scan found multiple vulnerabilities including four high-severity ones, the score is therefor 'F':
+
+```
+{
+  "Id": "5658fd79-af24-4713-b373-560050311140",
+  "Timestamp": 1587625041488578600,
+  "Image": "ubuntu:trusty-20161101",
+  "State": "Finished",
+  "Rank": 1,
+  "Score": "F",
+  "Vulnerabilities": [
+    {
+      "Severity": "High",
+      "Items": 4
+    },
+    {
+      "Severity": "Medium",
+      "Items": 81
+    },
+    {
+      "Severity": "Low",
+      "Items": 94
+    },
+    {
+      "Severity": "Negligible",
+      "Items": 34
+    }
+  ]
+}
+```
+
+This scan found no vulnerabilities, the score is therefor 'A+':
+
+```
+{
+  "Id": "c63ae188-603c-4d80-8e7f-5f14c63c8512",
+  "Timestamp": 1587625026671285200,
+  "Image": "image_to_scan:latest",
+  "State": "Finished",
+  "Rank": 100,
+  "Score": "A+",
+  "Vulnerabilities": []
+}
+```
