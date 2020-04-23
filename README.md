@@ -61,6 +61,7 @@ jobs:
 
 ## How it works
 
-The action starts by pushing the image to registry.tufin.io, this approach allows SecureCloud to scan images in private repositories.
+The action starts by pushing the image to https://registry.tufin.io, this approach allows SecureCloud to scan images in private repositories.
+
 Once the image is pushed, SecureCloud scans it and returns a high-level summary of the findings.
 
