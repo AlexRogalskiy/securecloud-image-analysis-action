@@ -15,11 +15,6 @@ jobs:
           securecloud_project: retail
           image: image_to_scan
           cve_details: true
-      - name: Get CVE details
-        uses: wei/curl@v1.1.1
-        with:
-          args: -s "https://securecloud.tufin.io/cia/generic-bank/retail/scans/latest?image=ubuntu:trusty-20161101"
         env:
           TUFIN_API_KEY: ${{ secrets.GENERIC_BANK_RETAIL_ALL_TOKEN }}
           TUFIN_DOCKER_REPO_PASSWORD: ${{ secrets.GENERIC_BANK_RETAIL_AGENT_TOKEN }}
-
