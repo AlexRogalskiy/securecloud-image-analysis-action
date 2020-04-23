@@ -25,7 +25,7 @@ Build a docker image (or pull it from a registry) and then use this action to sc
 4.  Call the Tufin action with the following parametes:
 
 | Parameter           | Desription           | Mandatory?  |
-| ------------------- | -------------------- | ----------- |
+|:------------------- |:-------------------- |:----------- |
 | securecloud_account | SecureCloud account  | yes         |
 | securecloud_project | SecureCloud project  | yes         |
 | image               | Image name           | yes         |
@@ -71,7 +71,7 @@ The rank range is between 1 (many vulnerabilities) to 100 (no vulnerabilities).
 The score is one of:
 
 | Score | Rank  | Vulnerabilities                    |
-| ------|-------|------------------------------------|
+|:------|:------|:-----------------------------------|
 | A+    | 100   | No vulnerabilities                 |
 | A     | 90-99 | A few with low severities          |
 | B     | 80-89 | ...                                |
