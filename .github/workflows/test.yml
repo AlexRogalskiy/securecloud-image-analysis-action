@@ -13,7 +13,8 @@ jobs:
         with:
           securecloud_account: generic-bank
           securecloud_project: retail
-          image: image_to_scan
+          image: ubuntu
+          tag: trusty-20161101
         env:
           TUFIN_API_KEY: ${{ secrets.GENERIC_BANK_RETAIL_ALL_TOKEN }}
           TUFIN_DOCKER_REPO_PASSWORD: ${{ secrets.GENERIC_BANK_RETAIL_AGENT_TOKEN }}
