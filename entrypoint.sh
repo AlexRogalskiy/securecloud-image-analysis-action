@@ -2,11 +2,16 @@
 set -e
 
 main() {
+  # sanitize input
   sanitize "${INPUT_SECURECLOUD_ACCOUNT}" securecloud_account
   sanitize "${INPUT_SECURECLOUD_PROJECT}" securecloud_project
   sanitize "${INPUT_IMAGE}" image
   sanitize "${INPUT_TAG}" tag
   sanitize "${INPUT_CVE_DETAILS}" cve_details
+
+  # sanitize env
+  sanitize "${TUFIN_API_KEY}" TUFIN_API_KEY
+  sanitize "${TUFIN_DOCKER_REPO_PASSWORD}" TUFIN_DOCKER_REPO_PASSWORD
 
   scanImage "${INPUT_SECURECLOUD_ACCOUNT}" "${INPUT_SECURECLOUD_PROJECT}" "${INPUT_IMAGE}" "${INPUT_TAG}" ${INPUT_CVE_DETAILS}
 }
