@@ -1,5 +1,7 @@
 # Tufin Labs - Github Action for Docker Vulnerability Scanning
 
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Ftufin%2Fsecurecloud-image-analysis-action%2Fbadge%3Fref%3Dmaster&style=flat)](https://actions-badge.atrox.dev/tufin/securecloud-image-analysis-action/goto?ref=master)
+
 This GitHub Action scans a docker image for vulnerabilities using Tufin SecureCloud.
 
 ## Setup
