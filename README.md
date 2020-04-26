@@ -45,7 +45,7 @@ jobs:
       - name: Build the Docker Image
         run: docker build -t my-image:2 . 
       - name: Tufin SecureCloud Vulenrability Analysis
-        uses: Tufin/securecloud-image-analysis-action
+        uses: Tufin/securecloud-image-analysis-action@master
         with:
           securecloud_account: generic-bank
           securecloud_project: my-project
